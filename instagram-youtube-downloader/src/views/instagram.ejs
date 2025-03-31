@@ -15,17 +15,12 @@
         
         <div class="download-section">
             <h2>Télécharger depuis Instagram</h2>
-            <form id="instagram-form" class="download-form" action="/api/instagram/download" method="POST">
+            <form id="instagram-form" action="/api/instagram/download" method="POST">
                 <div class="form-group">
-                    <label for="url">Collez l'URL du post Instagram :</label>
+                    <label for="url">URL Instagram :</label>
                     <input type="text" id="url" name="url" placeholder="https://www.instagram.com/p/..." required>
                 </div>
-                
-                <div class="form-help">
-                    <p>Fonctionne avec les posts simples, carrousels et Reels</p>
-                </div>
-                
-                <button type="submit" class="btn instagram-btn">Télécharger</button>
+                <button type="submit" class="btn btn-primary">Télécharger</button>
             </form>
             
             <div id="media-preview" class="media-preview">

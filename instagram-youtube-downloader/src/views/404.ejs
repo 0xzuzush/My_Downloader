@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Page introuvable - MediaGrab</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+    <div class="container">
+        <div class="error-page">
+            <h1>404</h1>
+            <h2>Page introuvable</h2>
+            <p><%= message %></p>
+            <a href="/" class="btn">Retour à l'accueil</a>
+        </div>
+    </div>
+    
+    <%- include('partials/footer') %>
+</body>
+</html>

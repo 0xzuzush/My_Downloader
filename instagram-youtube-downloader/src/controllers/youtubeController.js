@@ -11,13 +11,19 @@ class YoutubeController {
             const videoInfo = await youtubeService.downloadVideo(url, quality);
             return res.status(200).json({
                 success: true,
-                data: videoInfo
+                data: videoInfo,
             });
         } catch (error) {
             logger.error(`YouTube download failed: ${error.message}`);
+            if (error.message.includes('formats disponibles')) {
+                return res.status(400).json({
+                    success: false,
+                    message: error.message,
+                });
+            }
             return res.status(500).json({
                 success: false,
-                message: error.message
+                message: error.message,
             });
         }
     }

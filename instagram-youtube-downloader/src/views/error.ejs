@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Erreur - MediaGrab</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+    <div class="container">
+        <div class="error-page">
+            <h1>Erreur</h1>
+            <h2><%= message %></h2>
+            <% if (error && error.stack) { %>
+                <pre class="error-stack"><%= error.stack %></pre>
+            <% } %>
+            <a href="/" class="btn">Retour à l'accueil</a>
+        </div>
+    </div>
+    
+    <%- include('partials/footer') %>
+</body>
+</html>
