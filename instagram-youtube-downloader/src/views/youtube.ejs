@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Téléchargeur YouTube - MediaGrab</title>
+    <%- include('partials/head') %>
+</head>
+<body class="youtube-page">
+    <%- include('partials/header') %>
+    
+    <div class="container">
+        <div class="page-header">
+            <h1>Téléchargeur YouTube</h1>
+            <p>Téléchargez des vidéos YouTube en haute qualité ou extrayez l'audio</p>
+        </div>
+        
+        <div class="download-section">
+            <h2>Télécharger depuis YouTube</h2>
+            <form id="youtube-form" class="download-form" action="/api/youtube/download" method="POST">
+                <div class="form-group">
+                    <label for="url">Collez l'URL de la vidéo YouTube :</label>
+                    <input type="text" id="url" name="url" placeholder="https://www.youtube.com/watch?v=..." required>
+                </div>
+                
+                <h3>Choisissez le format :</h3>
+                <div class="format-options">
+                    <div class="format-option active" data-format="mp4-1080p">
+                        <i class="fas fa-film fa-2x"></i>
+                        <h4>HD 1080p</h4>
+                        <p>MP4</p>
+                    </div>
+
+                    <div class="format-option" data-format="mp4-720p">
+                        <i class="fas fa-video fa-2x"></i>
+                        <h4>720p</h4>
+                        <p>MP4</p>
+                    </div>
+
+                    <div class="format-option" data-format="mp4-4k">
+                        <i class="fas fa-tv fa-2x"></i>
+                        <h4>4K</h4>
+                        <p>MP4</p>
+                    </div>
+
+                    <div class="format-option" data-format="mp3">
+                        <i class="fas fa-music fa-2x"></i>
+                        <h4>Audio</h4>
+                        <p>MP3</p>
+                    </div>
+                </div>
+                
+                <input type="hidden" id="format" name="format" value="mp4-1080p">
+                
+                <button type="submit" class="btn youtube-btn">Télécharger</button>
+            </form>
+            
+            <div id="media-preview" class="media-preview">
+                <!-- Le contenu sera rempli dynamiquement via JavaScript -->
+            </div>
+        </div>
+        
+        <div class="features youtube-features">
+            <div class="feature">
+                <i class="fas fa-photo-film fa-2x"></i>
+                <h3>Haute qualité</h3>
+                <p>Jusqu'à 4K pour les vidéos compatibles</p>
+            </div>
+            
+            <div class="feature">
+                <i class="fas fa-music fa-2x"></i>
+                <h3>Extraction audio</h3>
+                <p>MP3 haute qualité 320kbps</p>
+            </div>
+            
+            <div class="feature">
+                <i class="fas fa-bolt fa-2x"></i>
+                <h3>Téléchargement rapide</h3>
+                <p>Optimisé pour des téléchargements rapides</p>
+            </div>
+        </div>
+    </div>
+    
+    <%- include('partials/footer') %>
+    
+    <script src="/js/youtube.js"></script>
+</body>
+</html>

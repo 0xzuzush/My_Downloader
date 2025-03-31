@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Téléchargeur Instagram - MediaGrab</title>
+    <%- include('partials/head') %>
+</head>
+<body class="instagram-page">
+    <%- include('partials/header') %>
+    
+    <div class="container">
+        <div class="page-header">
+            <h1>Téléchargeur Instagram</h1>
+            <p>Téléchargez des photos et vidéos Instagram en haute qualité</p>
+        </div>
+        
+        <div class="download-section">
+            <h2>Télécharger depuis Instagram</h2>
+            <form id="instagram-form" class="download-form" action="/api/instagram/download" method="POST">
+                <div class="form-group">
+                    <label for="url">Collez l'URL du post Instagram :</label>
+                    <input type="text" id="url" name="url" placeholder="https://www.instagram.com/p/..." required>
+                </div>
+                
+                <div class="form-help">
+                    <p>Fonctionne avec les posts simples, carrousels et Reels</p>
+                </div>
+                
+                <button type="submit" class="btn instagram-btn">Télécharger</button>
+            </form>
+            
+            <div id="media-preview" class="media-preview">
+                <!-- Le contenu sera rempli dynamiquement via JavaScript -->
+            </div>
+            
+            <div class="how-to-use">
+                <h3>Comment ça marche</h3>
+                <ol>
+                    <li>Copiez l'URL d'une publication Instagram</li>
+                    <li>Collez-la dans le champ ci-dessus</li>
+                    <li>Cliquez sur télécharger</li>
+                    <li>Téléchargez vos médias en haute qualité</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="features instagram-features">
+            <div class="feature">
+                <div class="feature-icon">
+                    <img src="/images/photo-icon.svg" alt="Photos">
+                </div>
+                <h3>Photos HD</h3>
+                <p>Téléchargez des photos en pleine résolution</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">
+                    <img src="/images/carousel-icon.svg" alt="Carrousels">
+                </div>
+                <h3>Carrousels</h3>
+                <p>Récupérez tous les éléments d'un post multiple</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">
+                    <img src="/images/reels-icon.svg" alt="Reels">
+                </div>
+                <h3>Reels</h3>
+                <p>Téléchargez des vidéos Reels en haute qualité</p>
+            </div>
+        </div>
+    </div>
+    
+    <%- include('partials/footer') %>
+    
+    <script src="/js/instagram.js"></script>
+</body>
+</html>
