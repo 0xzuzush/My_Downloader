@@ -1,0 +1,26 @@
+# Dossier node_modules
+node_modules/
+
+# Fichiers de logs
+*.log
+logs/
+
+# Variables d'environnement
+.env
+
+# Fichiers/dossiers de téléchargements (générés dynamiquement)
+downloads/
+
+# Fichiers temporaires et spécifiques aux OS
+.DS_Store
+Thumbs.db
+
+# Dossiers et fichiers d'IDE/éditeur
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Autres fichiers temporaires
+tmp/
+temp/
